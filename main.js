@@ -19,7 +19,7 @@ const getPlayerChoice = function () {
 
 
 // 컴퓨터가 고른것
-const getComputerChoice = function () {
+const getComputerChoice =()=>{
     let computerSelect
     let randomValue = Math.random()
     if (randomValue > 0.34) computerSelect = ROCK
@@ -32,7 +32,7 @@ const getComputerChoice = function () {
 
 
 // 두개 비교 함수
-const getWinner = function (pChoice, Cchoice) {
+const getWinner = (pChoice, Cchoice)=>{
     if (pChoice === Cchoice) return '비겼습니다'
     //사람이 이기는 경우
     else if (pChoice === ROCK && Cchoice === SCISSORS || pChoice === SCISSORS && Cchoice === PAPER
@@ -45,7 +45,7 @@ const getWinner = function (pChoice, Cchoice) {
 }
 
 let button = document.querySelector('#button')
-button.addEventListener('click', function () {
+button.addEventListener('click', ()=>{
     const playerChoice = getPlayerChoice();
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
